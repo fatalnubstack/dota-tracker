@@ -178,7 +178,7 @@ export default function App() {
         @keyframes fly4{0%{transform:translate(0,0) rotate(-20deg)}25%{transform:translate(-50px,-60px) rotate(10deg)}50%{transform:translate(40px,-100px) rotate(-40deg)}75%{transform:translate(-20px,-50px) rotate(20deg)}100%{transform:translate(0,0) rotate(-20deg)}}
         .float-item{position:fixed;font-size:clamp(30px,5vw,55px);pointer-events:none;z-index:999;transition:opacity 0.5s ease;filter:drop-shadow(0 0 10px rgba(255,255,255,0.3));}
         .overlay-hint{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);font-family:'Rajdhani',sans-serif;font-size:12px;letter-spacing:3px;color:#6888a0;text-transform:uppercase;z-index:1000;pointer-events:none;transition:opacity 0.5s ease;}
-      \`}</style>
+      `}</style>
       {showOverlay && (
         <>
           <div className="float-item" style={{top:"15%",left:"10%",animation:"fly1 6s ease-in-out infinite"}}>🩺</div>
