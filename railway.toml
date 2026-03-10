@@ -1,0 +1,7 @@
+[build]
+builder = "nixpacks"
+buildCommand = "npm install --prefix server && npm install --prefix client && npm run build --prefix client"
+
+[deploy]
+startCommand = "NODE_ENV=production node server/index.js"
+restartPolicyType = "on_failure"
