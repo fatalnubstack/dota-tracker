@@ -167,10 +167,30 @@ export default function App() {
     );
   }
 
+  const [showOverlay, setShowOverlay] = useState(true);
+
   return (
     <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Bangers&display=swap');*{box-sizing:border-box;margin:0;padding:0}body{background:#080c10}@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.8)}}@keyframes stink{0%,100%{transform:rotate(-3deg) scale(1)}50%{transform:rotate(3deg) scale(1.05)}}@keyframes floatpoop{0%,100%{transform:translateY(0px)}50%{transform:translateY(-8px)}}.vyseros-title{font-family:'Bangers',cursive;font-size:clamp(40px,10vw,90px);letter-spacing:6px;background:linear-gradient(180deg,#a8ff00 0%,#5cb800 40%,#3a7a00 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 20px rgba(100,200,0,0.6));animation:stink 2s ease-in-out infinite;display:inline-block;}.poop1{font-size:clamp(30px,6vw,60px);animation:floatpoop 1.5s ease-in-out infinite;display:inline-block;margin:0 10px;}.poop2{font-size:clamp(30px,6vw,60px);animation:floatpoop 1.8s ease-in-out infinite;display:inline-block;margin:0 10px;}`}</style>
-      <div style={{background:"#080c10",color:"#c8d8e8",fontFamily:"'Rajdhani',sans-serif",minHeight:"100vh"}}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Bangers&display=swap');*{box-sizing:border-box;margin:0;padding:0}body{background:#080c10}@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.8)}}@keyframes stink{0%,100%{transform:rotate(-3deg) scale(1)}50%{transform:rotate(3deg) scale(1.05)}}@keyframes floatpoop{0%,100%{transform:translateY(0px)}50%{transform:translateY(-8px)}}.vyseros-title{font-family:'Bangers',cursive;font-size:clamp(40px,10vw,90px);letter-spacing:6px;background:linear-gradient(180deg,#a8ff00 0%,#5cb800 40%,#3a7a00 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 20px rgba(100,200,0,0.6));animation:stink 2s ease-in-out infinite;display:inline-block;}.poop1{font-size:clamp(30px,6vw,60px);animation:floatpoop 1.5s ease-in-out infinite;display:inline-block;margin:0 10px;}.poop2{font-size:clamp(30px,6vw,60px);animation:floatpoop 1.8s ease-in-out infinite;display:inline-block;margin:0 10px;}
+        @keyframes fly1{0%{transform:translate(0,0) rotate(0deg)}25%{transform:translate(30px,-40px) rotate(20deg)}50%{transform:translate(-20px,-80px) rotate(-10deg)}75%{transform:translate(40px,-120px) rotate(30deg)}100%{transform:translate(0,0) rotate(0deg)}}
+        @keyframes fly2{0%{transform:translate(0,0) rotate(0deg)}25%{transform:translate(-40px,-30px) rotate(-15deg)}50%{transform:translate(20px,-70px) rotate(10deg)}75%{transform:translate(-30px,-100px) rotate(-25deg)}100%{transform:translate(0,0) rotate(0deg)}}
+        @keyframes fly3{0%{transform:translate(0,0) rotate(45deg)}25%{transform:translate(50px,-50px) rotate(90deg)}50%{transform:translate(-30px,-90px) rotate(0deg)}75%{transform:translate(20px,-60px) rotate(135deg)}100%{transform:translate(0,0) rotate(45deg)}}
+        @keyframes fly4{0%{transform:translate(0,0) rotate(-20deg)}25%{transform:translate(-50px,-60px) rotate(10deg)}50%{transform:translate(40px,-100px) rotate(-40deg)}75%{transform:translate(-20px,-50px) rotate(20deg)}100%{transform:translate(0,0) rotate(-20deg)}}
+        .float-item{position:fixed;font-size:clamp(30px,5vw,55px);pointer-events:none;z-index:999;transition:opacity 0.5s ease;filter:drop-shadow(0 0 10px rgba(255,255,255,0.3));}
+        .overlay-hint{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);font-family:'Rajdhani',sans-serif;font-size:12px;letter-spacing:3px;color:#6888a0;text-transform:uppercase;z-index:1000;pointer-events:none;transition:opacity 0.5s ease;}
+      \`}</style>
+      {showOverlay && (
+        <>
+          <div className="float-item" style={{top:"15%",left:"10%",animation:"fly1 6s ease-in-out infinite"}}>🩺</div>
+          <div className="float-item" style={{top:"25%",right:"8%",animation:"fly2 7s ease-in-out infinite",animationDelay:"1s"}}>🩺</div>
+          <div className="float-item" style={{top:"55%",left:"5%",animation:"fly3 8s ease-in-out infinite",animationDelay:"2s"}}>🔧</div>
+          <div className="float-item" style={{top:"60%",right:"12%",animation:"fly4 5s ease-in-out infinite",animationDelay:"0.5s"}}>🔧</div>
+          <div className="float-item" style={{top:"40%",left:"50%",animation:"fly1 9s ease-in-out infinite",animationDelay:"3s"}}>🩺</div>
+          <div className="float-item" style={{top:"75%",left:"30%",animation:"fly2 6.5s ease-in-out infinite",animationDelay:"1.5s"}}>🔧</div>
+          <div className="overlay-hint">🖱️ pohyb myši = zmizí</div>
+        </>
+      )}
+      <div onMouseMove={() => setShowOverlay(false)} style={{background:"#080c10",color:"#c8d8e8",fontFamily:"'Rajdhani',sans-serif",minHeight:"100vh"}}>
         <div style={{position:"fixed",inset:0,pointerEvents:"none",background:"radial-gradient(ellipse 80% 60% at 20% 10%,rgba(30,80,160,.12) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 90%,rgba(163,48,48,.10) 0%,transparent 60%)"}}/>
         <div style={{maxWidth:920,margin:"0 auto",padding:"0 16px 60px",position:"relative",zIndex:1}}>
           <div style={{textAlign:"center",padding:"40px 0 24px"}}>
