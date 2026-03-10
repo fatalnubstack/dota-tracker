@@ -169,15 +169,16 @@ export default function App() {
 
   return (
     <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap');*{box-sizing:border-box;margin:0;padding:0}body{background:#080c10}@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.8)}}`}</style>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Bangers&display=swap');*{box-sizing:border-box;margin:0;padding:0}body{background:#080c10}@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.8)}}@keyframes stink{0%,100%{transform:rotate(-3deg) scale(1)}50%{transform:rotate(3deg) scale(1.05)}}@keyframes floatpoop{0%,100%{transform:translateY(0px)}50%{transform:translateY(-8px)}}.vyseros-title{font-family:'Bangers',cursive;font-size:clamp(40px,10vw,90px);letter-spacing:6px;background:linear-gradient(180deg,#a8ff00 0%,#5cb800 40%,#3a7a00 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 20px rgba(100,200,0,0.6));animation:stink 2s ease-in-out infinite;display:inline-block;}.poop1{font-size:clamp(30px,6vw,60px);animation:floatpoop 1.5s ease-in-out infinite;display:inline-block;margin:0 10px;}.poop2{font-size:clamp(30px,6vw,60px);animation:floatpoop 1.8s ease-in-out infinite;display:inline-block;margin:0 10px;}`}</style>
       <div style={{background:"#080c10",color:"#c8d8e8",fontFamily:"'Rajdhani',sans-serif",minHeight:"100vh"}}>
         <div style={{position:"fixed",inset:0,pointerEvents:"none",background:"radial-gradient(ellipse 80% 60% at 20% 10%,rgba(30,80,160,.12) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 90%,rgba(163,48,48,.10) 0%,transparent 60%)"}}/>
         <div style={{maxWidth:920,margin:"0 auto",padding:"0 16px 60px",position:"relative",zIndex:1}}>
           <div style={{textAlign:"center",padding:"40px 0 24px"}}>
             <div style={{fontSize:11,fontFamily:"'Cinzel',serif",letterSpacing:6,color:"#c89b3c",opacity:.8,marginBottom:6}}>⚔ DOTA 2 ⚔</div>
-            <h1 style={{fontFamily:"'Cinzel',serif",fontSize:"clamp(26px,5vw,48px)",fontWeight:900,letterSpacing:4,background:"linear-gradient(180deg,#f0c050 0%,#c89b3c 50%,#7a5a1a 100%)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>Match Tracker</h1>
-            <p style={{fontSize:13,letterSpacing:3,color:"#6888a0",marginTop:6,textTransform:"uppercase"}}>Player Statistics & Shared Victories</p>
-            <div style={{height:2,marginTop:18,background:"linear-gradient(90deg,transparent,#c89b3c,#f0c050,#c89b3c,transparent)",filter:"drop-shadow(0 0 6px #c89b3c)"}}/>
+            <div style={{marginBottom:4}}><span className="poop1">💩</span><span className="vyseros-title">VÝSEROS</span><span className="poop2">💩</span></div>
+            <div style={{fontFamily:"'Bangers',cursive",fontSize:"clamp(18px,4vw,32px)",letterSpacing:8,color:"#a8ff00",opacity:.8,textShadow:"0 0 10px rgba(100,200,0,0.5)"}}>TRACKER</div>
+            <p style={{fontSize:12,letterSpacing:3,color:"#6888a0",marginTop:8,textTransform:"uppercase"}}>💩 Sledujeme každé vysrání 💩</p>
+            <div style={{height:2,marginTop:18,background:"linear-gradient(90deg,transparent,#5cb800,#a8ff00,#5cb800,transparent)",filter:"drop-shadow(0 0 6px #5cb800)"}}/>
           </div>
 
           {phase==="loading"&&<div style={{textAlign:"center",padding:"80px 20px"}}>
